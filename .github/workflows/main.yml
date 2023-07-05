@@ -47,7 +47,7 @@ jobs:
         draft: false
         prerelease: true
         release_name: gramps.flatpak
-        tag_name: ${{ github.ref }}
+        tag_name: gramps.flatpak
       env:
         GITHUB_TOKEN: ${{ github.token }}
         
@@ -56,7 +56,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
-        upload_url: ${{ github.ref.upload_url }}
+#        upload_url: ${{ github.ref.upload_url }}
         asset_path: ./bin/flatpak.gramps.flatpak
         asset_name: gramps.flatpak
         asset_content_typs: application/flatpak
