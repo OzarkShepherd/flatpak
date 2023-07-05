@@ -39,3 +39,24 @@ jobs:
       with:
         name: gramps.flatpak
         path: gramps.flatpak
+
+    - name: Archive-as-Release
+      uses: actions/create-release@v3
+      id: create_release
+      with:
+        draft: false
+        prerelease: false
+        release_name: ${{ steps.version.outputs.version }}
+        tag_name: ${{ github.ref }}
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+        
+    - name: Upload-Release
+      uses: actions/upload-release-asset@v3
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./bin/flatpak.gramps.flatpak
+        asset_name: gramps.flatpak
+        asset_content_typs: application/flatpak
