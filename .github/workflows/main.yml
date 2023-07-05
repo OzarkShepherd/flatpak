@@ -41,7 +41,7 @@ jobs:
         path: gramps.flatpak
 
     - name: Archive-as-Release
-      uses: actions/create-release@v3
+      uses: actions/create-release@v1
       id: create_release
       with:
         draft: false
@@ -52,7 +52,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
         
     - name: Upload-Release
-      uses: actions/upload-release-asset@v3
+      uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ github.token }}
       with:
