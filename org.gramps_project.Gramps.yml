@@ -193,8 +193,6 @@ modules:
    # pygraphviz most recent version as of 2024.03 was from 2024.01
   - name: PyGraphViz
     buildsystem: simple
-    ensure-writable:
-      - /lib/python3.11/site-packages/gi/overrides
     build-commands:
       - pip3 install --no-build-isolation .
     sources:
