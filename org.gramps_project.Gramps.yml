@@ -152,14 +152,22 @@ modules:
         sha256:  bd7ab5efa93ad692e6daa29cd249364e521218329221726a113ca3cb281c8611
 
     # graphviz most recent version as of 2024Feb from 2024Feb
-    # pygraphviz 1.12 requires pep517, which is not compatible with flatpak. Must use older version if necessary. 
-    # however, pygraphviz no longer appears necessary from testing flatpaks, so pygraphviz will be left out starting with Gramps 5.2.
   - name: GraphVizDependency
     buildsystem: autotools
     sources:
       - type: archive
         url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/graphviz-10.0.1.tar.xz
         sha256:  7bd8064a94bc178862aa0fbb0ed2236f49c188b2fd656487247c58db3019fe21
+
+    # pygraphviz most recent version as of 2024.03 was from 2024.01
+  - name: PyGraphViz
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation .
+    sources:
+      - type: archive
+        url:  https://github.com/pygraphviz/pygraphviz/archive/refs/tags/pygraphviz-1.12.tar.gz
+        sha256:  d200d22fd81ef50a03ce9cf60a740f97bc32721c975d92a81342358e34428d2f
 
     # ghostscript most recent version as of 2024.03 was from 2024.03
   - name: GhostscriptDependency
