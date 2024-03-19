@@ -33,6 +33,8 @@ build-options:
   env:
     PIP_PREFIX: /app
     PIP_DISABLE_PIP_VERSION_CHECK: "1"
+  ensure-writable:
+    - /lib/python3.11/site-packages/gi/overrides
 
 cleanup:
   - '*.a'
