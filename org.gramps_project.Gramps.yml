@@ -159,16 +159,6 @@ modules:
         url: https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/graphviz-10.0.1.tar.xz
         sha256:  7bd8064a94bc178862aa0fbb0ed2236f49c188b2fd656487247c58db3019fe21
 
-    # pygraphviz most recent version as of 2024.03 was from 2024.01
-  - name: PyGraphViz
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-build-isolation .
-    sources:
-      - type: archive
-        url:  https://github.com/pygraphviz/pygraphviz/archive/refs/tags/pygraphviz-1.12.tar.gz
-        sha256:  d200d22fd81ef50a03ce9cf60a740f97bc32721c975d92a81342358e34428d2f
-
     # ghostscript most recent version as of 2024.03 was from 2024.03
   - name: GhostscriptDependency
     buildsystem: autotools
@@ -197,7 +187,19 @@ modules:
       - type: archive
         url:  https://files.pythonhosted.org/packages/source/n/networkx/networkx-3.2.1.tar.gz
         sha256:  9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6
-  
+
+   # pygraphviz most recent version as of 2024.03 was from 2024.01
+  - name: PyGraphViz
+    buildsystem: simple
+    ensure-writable:
+      - /lib/python3.11/site-packages/gi/overrides
+    build-commands:
+      - pip3 install --no-build-isolation .
+    sources:
+      - type: archive
+        url:  https://github.com/pygraphviz/pygraphviz/archive/refs/tags/pygraphviz-1.12.tar.gz
+        sha256:  d200d22fd81ef50a03ce9cf60a740f97bc32721c975d92a81342358e34428d2f
+
 # Gramps
   - name: Gramps
     buildsystem: simple
