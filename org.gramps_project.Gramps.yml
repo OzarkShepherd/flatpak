@@ -199,7 +199,17 @@ modules:
       - type: archive
         url:  https://files.pythonhosted.org/packages/source/n/networkx/networkx-3.2.1.tar.gz
         sha256:  9f1bb5cf3409bf324e0a722c20bdb4c20ee39bf1c30ce8ae499c8502b0b5e0c6
-  
+
+# orjson to increase performance, most recent version as of 2025.02 was from 2025.01
+  - name: orjsonDependency
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation .
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/22/86/65dc69bd88b6dd254535310e97bc518aa50a39ef9c5a2a5d518e7a223710/orjson-3.10.15-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256: e117eb299a35f2634e25ed120c37c641398826c2f5a3d3cc39f5993b96171b9e
+
 # Gramps
   - name: Gramps
     buildsystem: simple
