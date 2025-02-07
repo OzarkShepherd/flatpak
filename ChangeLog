@@ -1,3 +1,7 @@
+Gramps flatpak 6.0.0-beta1
+  - update gramps source to 6.0.0-beta1
+  - add orjson 3.10.15 amd64 version
+
 Gramps flatpak 5.2.3-1
   - update Gnome runtime to 47
   - update to goocanvas 3.0.0 because a patch exists for it to work
