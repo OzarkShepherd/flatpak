@@ -46,8 +46,6 @@ cleanup:
 modules:
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
@@ -58,8 +56,6 @@ modules:
 
     # Goocanvas is abandoned and the most recent update is from 2021.01.16.
   - name: GoocanvasDependency
-    cleanup:
-      - /bin
     buildsystem: autotools
     config-opts:
       - --prefix=/app
@@ -76,8 +72,6 @@ modules:
  # spell checking, gspell with enchant (enchant required for gspell 1.14.0 stability)
     # enchant most recent version as of 2025.04 was 2024.08, main github changed from AbiWord to rrthomas
   - name: enchant
-    cleanup:
-      - /bin
     buildsystem: autotools
     sources:
       - type: archive
@@ -86,8 +80,6 @@ modules:
 
     # Gspell most recent version as of 2025.03 was from 2024.09
   - name: gspell
-    cleanup:
-      - /bin
     buildsystem: meson
     sources: 
       - type: archive
@@ -97,8 +89,6 @@ modules:
 # following dependencies are for images and metadata
     # exiv2 most recent version as of 2025.03 was from 2025.02
   - name: exiv2
-    cleanup:
-      - /bin
     buildsystem: cmake-ninja
     config-opts:
       - -DEXIV2_ENABLE_BMFF=ON
@@ -112,8 +102,6 @@ modules:
     # gexiv2 most recent version as of 2025.03 was from 2024.06
     # gramps apparently needs introspection to use gexiv2
   - name: gexiv2Dependency
-    cleanup:
-      - /bin
     buildsystem: meson
     build-options:
       env:
@@ -128,8 +116,6 @@ modules:
    # Libsoup 2 is not in Gnome 44 runtime as of 2023-06, so libsoup needs a manual install until
    # osmgpsmap gets updated to use a newer version of libsoup. Latest libsoup 2 is 2.74 from Oct 2022.
   - name: libsoupDependency
-    cleanup:
-      - /bin
     buildsystem: meson
     sources:
       - type: archive
@@ -138,8 +124,6 @@ modules:
 
     # osmgpsmap is abandoned as of 2025.03 so most recent version was from 202102
   - name: osmgpsmapDependency
-    cleanup:
-      - /bin
     buildsystem: autotools
     sources:
       - type: archive
@@ -149,8 +133,6 @@ modules:
     # Gramps does not see geocodeglib in platform, needed for place coordinate addon
     # appears to not have versioned releases anymore, last git edit as of 2025.03 was from 2024.03
   - name: geocodeglibDependency
-    cleanup:
-      - /bin
     buildsystem: meson
     sources:
       - type: archive
@@ -159,8 +141,6 @@ modules:
 
     # pyicu most recent release as of 2025.03 was from 2024.10
   - name: PyICUDependency
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
@@ -171,8 +151,6 @@ modules:
 
     # graphviz most recent version as of 2025.03 from 2024.12
   - name: GraphVizDependency
-    cleanup:
-      - /bin
     buildsystem: autotools
     sources:
       - type: archive
@@ -181,8 +159,6 @@ modules:
 
     # pygraphviz 1.14 most recent version 2024.09.29 as of 2025.03
   - name: PyGraphVizDependency
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
@@ -193,8 +169,6 @@ modules:
 
     # ghostscript most recent version as of 2025.03 was from 2025.03
   - name: GhostscriptDependency
-    cleanup:
-      - /bin
     buildsystem: autotools
     sources:
       - type: archive
@@ -204,8 +178,6 @@ modules:
 # for network chart addon
     # networkx most recent stable version as of 2025.03 was from 2024.10
   - name: networkxDependency
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
@@ -217,8 +189,6 @@ modules:
 # Gramps 6 requires orjson to run in flatpak
 # most recent version is from 2025.01 as of 2025.03
   - name: orjsonDependency
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --prefix /app --no-deps orjson-*.whl
@@ -234,8 +204,6 @@ modules:
 
 # Gramps
   - name: Gramps
-    cleanup:
-      - /bin
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
