@@ -69,13 +69,13 @@ modules:
       - type: patch
         path: goocanvas-3.0.0-gcc14.patch
 
-    # Gspell most recent version as of 2025.03 was from 2024.09
+    # Gspell downgrade to 1.12.2 for stability in Gramps 6, 1.13.x up needs meson buildsystem
   - name: gspell
-    buildsystem: meson
+    buildsystem: autotools
     sources: 
       - type: archive
-        url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
-        sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
+        url: https://download.gnome.org/sources/gspell/1.12/gspell-1.12.2.tar.xz
+        sha256: b4e993bd827e4ceb6a770b1b5e8950fce3be9c8b2b0cbeb22fdf992808dd2139
 
 # following dependencies are for images and metadata
     # exiv2 most recent version as of 2025.03 was from 2025.02
