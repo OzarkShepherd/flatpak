@@ -76,9 +76,6 @@ modules:
  # spell checking, gspell with enchant (enchant required for gspell 1.14.0 stability)
     # enchant most recent version as of 2025.04 was 2024.08
   - name: enchant
-    cleanup:
-      - /bin
-    buildsystem: cmake
     sources:
       - type: archive
         url: https://github.com/AbiWord/enchant/archive/refs/tags/v2.8.2.tar.gz
