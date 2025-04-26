@@ -46,7 +46,11 @@ cleanup:
 modules:
 #gnu rcs most recent version with normal tar as of 2025.04 is from 2020.10
   - name: RCSDependency
-#    buildsystem: autotools
+    buildsystem: simple
+    build-commands:
+      - ./configure
+      - make
+      - make install
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.0.tar.xz
