@@ -47,10 +47,8 @@ modules:
 #gnu rcs most recent version with normal tar as of 2025.04 is from 2020.10
   - name: RCSDependency
     buildsystem: simple
-    config-opts:
-      - --with-editor=gnome-text-editor
     build-commands:
-      - ./configure
+      - ./configure --with-editor=gedit
       - make
       - make install
     sources:
