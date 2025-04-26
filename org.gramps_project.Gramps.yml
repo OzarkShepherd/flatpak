@@ -82,8 +82,8 @@ modules:
           - /bin
         sources:
           - type: archive
-            url: https://github.com/AbiWord/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz
-            sha256: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
+            url: https://github.com/AbiWord/enchant/archive/refs/tags/v2.8.2.tar.gz
+            sha256: ab4a85009672ec27c2c07dc00af38d42aa984e7901a0fd7e2c4dc8d3d3d97ed9
     cleanup:
       - /bin
     buildsystem: meson
