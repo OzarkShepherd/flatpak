@@ -44,11 +44,17 @@ cleanup:
   - /share/gir-1.0
   - /share/man
 modules:
+# install ed line editor so that gnu rcs will compile
+# most recent version as of 2025.04 from 2025.01
+  - name: edLineEditor
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/ed/ed-1.21.tar.lz
+        sha256: 60e24998727d453a5cf02c54664b97536de46a2b34cd1f4f67c1c1a61bbbad75
 #gnu rcs most recent version with normal tar as of 2025.04 is from 2020.10
   - name: RCSDependency
     buildsystem: autotools
-    config-opts:
-      - --with-editor=gedit
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.0.tar.xz
