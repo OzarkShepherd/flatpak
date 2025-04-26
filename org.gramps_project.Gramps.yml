@@ -48,7 +48,7 @@ modules:
   - name: RCSDependency
     buildsystem: simple
     config-opts:
-      - --with-editor=vi
+      - --with-editor=gnome-text-editor
     build-commands:
       - ./configure
       - make
