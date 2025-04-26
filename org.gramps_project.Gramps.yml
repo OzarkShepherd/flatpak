@@ -45,12 +45,14 @@ cleanup:
   - /share/man
 modules:
 #gnu rcs most recent version with normal tar as of 2025.04 is from 2020.10
-  - name: GNURCS
-    buildsystem: cmake
+  - name: RCSDependency
+    buildsystem: autotools
     sources:
       - type: archive
         url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.0.tar.xz
-        sha256: 3a0d9f958c7ad303e475e8634654974edbe6deb3a454491f3857dc1889bac5c5
+        mirror-urls:
+          - https://gnu.freemirror.org/gnu/rcs/rcs-5.10.0.tar.xz
+        sha256:  3a0d9f958c7ad303e475e8634654974edbe6deb3a454491f3857dc1889bac5c5
 
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
