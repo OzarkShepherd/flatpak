@@ -87,17 +87,23 @@ modules:
         path: goocanvas-3.0.0-gcc14.patch
 
  # spell checking, gspell with enchant (enchant required for gspell 1.14.0 stability)
-    # enchant most recent version as of 2025.04 was 2024.08, main github changed from AbiWord to rrthomas
+  # enchant most recent version as of 2025.04 was 2024.08, main github changed from AbiWord to rrthomas
   - name: enchant
     buildsystem: autotools
     sources:
       - type: archive
         url: https://github.com/rrthomas/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz
         sha256: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
-
-    # Gspell most recent version as of 2025.03 was from 2024.09
+  # Gspell most recent version as of 2025.03 was from 2024.09
   - name: gspell
     buildsystem: meson
+    config-opts:
+      - -Dgspell_app=false
+      - -Dgobject_introspection=true
+      - -Dvapi=false
+      - -Dgtk_doc=false
+      - -Dtests=false
+      - -Dinstall_tests=false
     sources: 
       - type: archive
         url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
