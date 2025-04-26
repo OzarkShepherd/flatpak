@@ -44,6 +44,14 @@ cleanup:
   - /share/gir-1.0
   - /share/man
 modules:
+#gnu rcs most recent version as of 2025.04 is from 2022.02
+  - name: GNURCS
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/rcs/rcs-5.10.1.tar.lz
+        sha256: 43ddfe10724a8b85e2468f6403b6000737186f01e60e0bd62fde69d842234cc5
+
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
