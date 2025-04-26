@@ -73,18 +73,19 @@ modules:
       - type: patch
         path: goocanvas-3.0.0-gcc14.patch
 
+ # spell checking, gspell with enchant (enchant required for gspell 1.14.0 stability)
+    # enchant most recent version as of 2025.04 was 2024.08
+  - name: enchant
+    cleanup:
+      - /bin
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/AbiWord/enchant/archive/refs/tags/v2.8.2.tar.gz
+        sha256: ab4a85009672ec27c2c07dc00af38d42aa984e7901a0fd7e2c4dc8d3d3d97ed9
+
     # Gspell most recent version as of 2025.03 was from 2024.09
-    # enchant module needed for gspell 1.14.0 again or Gramps crashes, most recent version as of 2025.04 was 2024.08
   - name: gspell
-    modules:
-      - name: enchant
-        cleanup:
-          - /bin
-        buildsystem: autotools
-        sources:
-          - type: archive
-            url: https://github.com/AbiWord/enchant/archive/refs/tags/v2.8.2.tar.gz
-            sha256: ab4a85009672ec27c2c07dc00af38d42aa984e7901a0fd7e2c4dc8d3d3d97ed9
     cleanup:
       - /bin
     buildsystem: meson
