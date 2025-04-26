@@ -78,7 +78,7 @@ modules:
   - name: enchant
     cleanup:
       - /bin
-    buildsystem: autotools
+    buildsystem: cmake
     sources:
       - type: archive
         url: https://github.com/AbiWord/enchant/archive/refs/tags/v2.8.2.tar.gz
