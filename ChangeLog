@@ -1,8 +1,12 @@
-Gramps flatpak 6.0.1-1
+Gramps flatpak 6.0.1-2
   - add enchant back in for gspell 
   - add gnu rcs back in
   - add ed to allow gnu rcs to compile
   - add config option to gspell for gobject introspection
+  - add pyenchant 3.2.2
+
+Gramps flatpak 6.0.1-1
+  - disable gspell because it crashes Gramps when spell check is enabled while user works on Notes
 
 Gramps flatpak 6.0.1-0
   - update Gramps source to 6.0.1
