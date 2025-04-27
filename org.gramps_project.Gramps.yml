@@ -94,6 +94,15 @@ modules:
       - type: archive
         url: https://github.com/rrthomas/enchant/releases/download/v2.8.2/enchant-2.8.2.tar.gz
         sha256: 8f19535adb5577b83b00e02f330fe9b9eb40dd21f19e2899636fc4d3a7696375
+  # python3-enchant most recent version as of 2025.04 was from 2021.10
+  - name: pyenchant
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation .
+    sources:
+      - type: archive
+        url: https://files.pythonhosted.org/packages/b1/a3/86763b6350727ca81c8fcc5bb5bccee416e902e0085dc7a902c81233717e/pyenchant-3.2.2.tar.gz
+        sha256: 1cf830c6614362a78aab78d50eaf7c6c93831369c52e1bb64ffae1df0341e637
   # Gspell most recent version as of 2025.03 was from 2024.09
   - name: gspell
     buildsystem: meson
