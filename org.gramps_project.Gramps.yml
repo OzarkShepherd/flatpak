@@ -60,11 +60,12 @@ modules:
       - --prefix=/app
       - -Dpython.install_env=prefix
       # meson tries to write bash completion script in /usr
-      - -Dbashcompletion=false
-    build-opts:
-      env:
-        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
-        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR=/app/lib/girepository-1.0
+#      - -Dbashcompletion=false
+      - -Dintrospection=false
+#    build-opts:
+#      env:
+#        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
+#        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR=/app/lib/girepository-1.0
     sources:
       - type: archive
         url:  https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.21.7/libsecret-0.21.7.tar.gz
