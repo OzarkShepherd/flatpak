@@ -59,6 +59,8 @@ modules:
       - -Dgtk_doc=false
       - --prefix=/app
       - -Dpython.install_env=prefix
+      # meson tries to write bash completion script in /usr
+      - -Dbashcompletion=false
     build-opts:
       env:
         - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
