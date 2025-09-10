@@ -52,6 +52,10 @@ modules:
 # libsecret to communicate with keyring for GrampsWebSync addon; most recent version as of 202509 is from 2025.04
   - name: libsecret
     buildsystem: meson
+    config-opts:
+      - -Dmanpage=false
+      - -Dvapi=false
+      - -Dgtk_doc=false
     build-opts:
       env:
         - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
