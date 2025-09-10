@@ -1,4 +1,0 @@
-[submodule "shared-modules"]
-# this adds flathub's shared modules for including libsecret for GrampsWebAddon
-	path = shared-modules
-	url = https://github.com/flathub/shared-modules.git
