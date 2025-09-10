@@ -45,71 +45,24 @@ cleanup:
   - /lib/cmake
   - /share/gir-1.0
   - /share/man
+  - /bin
 
 modules:
-# python3-keyring for GrampsWeb
-# keyring requires dbus-python to use Kwallet as of 2025.08.20
-  - shared-modules/libsecret/libsecret.json
-  # dbus-python most recent version as of 2025.08.20 is 1.4.0 from 2025.03
-  - name: dbus-python
+# libsecret to communicate with keyring for GrampsWebSync addon; most recent version as of 202509 is from 2025.04
+  - name: libsecret
     buildsystem: meson
+    config-opts:
+      - -Dmanpage=false
+        -Dvapi=false
+        -Dgtk_doc=false
+    build-opts:
+      env:
+        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
+          -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR=/app/lib/girepository-1.0
     sources:
       - type: archive
-        url:  https://gitlab.freedesktop.org/dbus/dbus-python/-/archive/dbus-python-1.4.0/dbus-python-dbus-python-1.4.0.tar.gz
-        sha256:  da4ee9bbb9eb901d463a7cc9f99dfdbe6c751c8b48b29b78d378985a3c9656ad
-  # flit_core is a dependency for Jeepney which is a dep for python3-secretstorage, which is a dep for python3-keyring
-  # flit_core most recent version as of 2025.08.21 is v3.12.0 from 2025.03.25
-  - name: flit_core
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-build-isolation .
-    sources:
-      - type: archive
-        url:  https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz
-        sha256:  18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2
-  # Jeepney is a dep for secretstorage which is a dep for python3-keyring
-  # Jeepney most recent version as of 2025.08.20 is v0.9.0 from 2025.02.27
-  - name: Jeepney
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-build-isolation .
-    sources:
-      - type: archive
-        url:  https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz
-        sha256:   cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732
-  # cryptography dependency for python3-secretstorage dependency for python3-keyring, most recent version as of 2025.08.22 is 45.0.6 from 2025.08.05
-  # cryptography tar for 45.0.6 requires a rust cargo library, so using whl
-  - name: Cryptography
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-deps cryptography*.whl
-    sources:
-      - type: file
-        only-arches: [x86_64]
-        url:  https://files.pythonhosted.org/packages/55/66/061ec6689207d54effdff535bbdf85cc380d32dd5377173085812565cf38/cryptography-45.0.6-cp37-abi3-manylinux_2_34_x86_64.whl
-        sha256:  eccddbd986e43014263eda489abbddfbc287af5cddfd690477993dbb31e31016
-      - type: file
-        only-arches: [aarch64]
-        url:  https://files.pythonhosted.org/packages/77/2d/09b097adfdee0227cfd4c699b3375a842080f065bab9014248933497c3f9/cryptography-45.0.6-cp37-abi3-manylinux_2_34_aarch64.whl
-        sha256:  5bd6020c80c5b2b2242d6c48487d7b85700f5e0038e67b29d706f98440d66eb5
-  # python3-secretstorage is a dep for python3-keyring, most recent version as of 2025.08.22 is 3.3.3 from 2022.08.13
-  - name: SecretStorage
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-deps SecretStorage*.whl
-    sources:
-      - type: file
-        url:  https://files.pythonhosted.org/packages/54/24/b4293291fa1dd830f353d2cb163295742fa87f179fcc8a20a306a81978b7/SecretStorage-3.3.3-py3-none-any.whl
-        sha256:  f356e6628222568e3af06f2eba8df495efa13b3b63081dafd4f7d9a7b7bc9f99 
-  # python3-keyring most recent version as of 2025.08.20 is v25.6.0 from 2024.12.25
-  - name: python3-keyring
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-deps keyring*.whl
-    sources:
-      - type: file
-        url:  https://files.pythonhosted.org/packages/d3/32/da7f44bcb1105d3e88a0b74ebdca50c59121d2ddf71c9e34ba47df7f3a56/keyring-25.6.0-py3-none-any.whl
-        sha256:  552a3f7af126ece7ed5c89753650eec89c7eaae8617d0aa4d9ad2b75111266bd 
+        url:  https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.21.7/libsecret-0.21.7.tar.gz
+        sha256:  944d8a6072b6f285db40b8e9927dbe4dde81dcc7d177f84271fb167ccc297f65
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
