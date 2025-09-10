@@ -5,7 +5,7 @@ The flatpak is available on flathub at https://flathub.org/apps/details/org.gram
 The Gramps flatpak contains dependencies and works with flathub runtimes to work independently regardless of the linux distribution.
 
 # List of Included Dependencies
-Dependencies confirmed in the flatpak platform:
+Dependencies confirmed in the flatpak platform and required for Gramps:
 - python3
 - gtk
 - pygobject
@@ -14,23 +14,18 @@ Dependencies confirmed in the flatpak platform:
 - pangocairo
 
 Dependencies added to the flatpak
-- orjson
-- osmgpsmap with its libsoup dependency
-- graphviz and pygraphviz
-- PyICU
-- ghostscript
-- gspell
-- pillow
-- exiv2 and gexiv2
-- geocodeglib
-- goocanvas
-- networkx
-- python3-keyring and the following 5 subdependencies
-- dbus-python dependency for KWallet
-- flit_core
-- Jeepney
-- python3-secretstorage
-- python3-cryptography
+- orjson (required for Gramps)
+- osmgpsmap with its libsoup dependency (for maps)
+- graphviz and pygraphviz (for some chart addons)
+- PyICU (for localizations)
+- ghostscript (for an addon that creates pdf files)
+- gspell (for spellcheck)
+- pillow (for images)
+- exiv2 and gexiv2 (for "Edit Image Exif Metadata" addon)
+- geocodeglib (for copy/paste of gps points in maps)
+- goocanvas (for "GraphView" addon)
+- networkx (for network chart addon)
+- libsecret (for the "Gramps Web Sync" Addon)
 
 To request another prerequisite be added to support another Gramps add-on, you can request it at the gramps project flatpak github or at the flathub Gramps flatpak github.
 
