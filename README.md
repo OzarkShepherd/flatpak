@@ -25,6 +25,7 @@ Dependencies added to the flatpak
 - geocodeglib
 - goocanvas
 - networkx
+- openai python interface for WebSearch addon
 
 To request another prerequisite be added to support another Gramps add-on, you can request it at the gramps project flatpak github or at the flathub Gramps flatpak github.
 
