@@ -33,7 +33,7 @@ build-options:
   env:
     PIP_PREFIX: /app
     PIP_DISABLE_PIP_VERSION_CHECK: "1"
-    PYTHONPATH: /app/lib/python3.13/site-packages:${PYTHONPATH}
+    PYOVERRIDE_DIRECTORY: "/app/lib/python3.x/site-packages"
 
 cleanup:
   - '*.a'
