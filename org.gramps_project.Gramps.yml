@@ -160,13 +160,13 @@ modules:
       - type: archive
         url: https://github.com/pygraphviz/pygraphviz/archive/refs/tags/pygraphviz-1.14.tar.gz
         sha256:  d9a43f34b920367fa89a2598083b47db42a28078aff7d4e2cb41475137532560
-# ghostscript is recommended for Gramps; most recent version as of 2025.03 was from 2025.03
+# ghostscript is recommended for Gramps; most recent version as of 2025.11 was from 2025.09
   - name: GhostscriptDependency
     buildsystem: autotools
     sources:
       - type: archive
-        url: https://github.com/ArtifexSoftware/ghostpdl/archive/refs/tags/ghostpdl-10.05.0.tar.gz
-        sha256: 8fb8eb3c34646ac7f0287c7673ebbf3928b23e558f421edf4495b9881430a1d4
+        url:  https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10060/ghostscript-10.06.0.tar.gz
+        sha256:  5bd6da34794928cc7e616f288e32bd0be7f9a5ca2d3c206a0af2c19a4e3a318f
 # for network chart addon
     # networkx most recent stable version as of 2025.03 was from 2024.10
   - name: networkxDependency
