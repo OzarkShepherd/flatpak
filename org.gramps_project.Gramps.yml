@@ -50,11 +50,11 @@ modules:
   - name: openai-python
     buildsystem: simple
     build-commands:
-      - pip3 install --no-build-isolation .
+      - pip3 install --no-deps openai*.whl
     sources:
-      - type: archive
-        url:  https://github.com/openai/openai-python/archive/refs/tags/v2.7.1.tar.gz
-        sha256:  c3bef7d5e48dbfbe8443511daf87102013c44618472c8416e46991916baa7d49
+      - type: file
+        url:  https://files.pythonhosted.org/packages/8c/74/6bfc3adc81f6c2cea4439f2a734c40e3a420703bbcdc539890096a732bbd/openai-2.7.1-py3-none-any.whl
+        sha256:   2f2530354d94c59c614645a4662b9dab0a5b881c5cd767a8587398feac0c9021 
 
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
