@@ -1,3 +1,7 @@
+Gramps flatpak 6.0.5--2
+  - update to Gnome 49 runtime and python 3.13
+  - add Extensions
+
 Gramps flatpak 6.0.5--1
   - update Gramps source to 6.0.5
 
