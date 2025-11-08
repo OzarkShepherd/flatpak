@@ -178,7 +178,7 @@ modules:
         url: https://files.pythonhosted.org/packages/fd/1d/06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937f/networkx-3.4.2.tar.gz
         sha256: 307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1
 # Gramps 6 requires orjson to run in flatpak
-# most recent version is from 2025.01 as of 2025.03
+# most recent version as of 2025.11 is from 2025.10
   - name: orjsonDependency
     buildsystem: simple
     build-commands:
@@ -186,12 +186,12 @@ modules:
     sources:
       - type: file
         only-arches: [x86_64]
-        url: https://files.pythonhosted.org/packages/fa/da/31543337febd043b8fa80a3b67de627669b88c7b128d9ad4cc2ece005b7a/orjson-3.10.15-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-        sha256: b48f59114fe318f33bbaee8ebeda696d8ccc94c9e90bc27dbe72153094e26f41
+        url: https://files.pythonhosted.org/packages/aa/fd/d0733fcb9086b8be4ebcfcda2d0312865d17d0d9884378b7cffb29d0763f/orjson-3.11.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256:  1469d254b9884f984026bd9b0fa5bbab477a4bfe558bba6848086f6d43eb5e73
       - type: file
         only-arches: [aarch64]
-        url: https://files.pythonhosted.org/packages/48/b7/2622b29f3afebe938a0a9037e184660379797d5fd5234e5998345d7a5b43/orjson-3.10.15-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-        sha256: dba5a1e85d554e3897fa9fe6fbcff2ed32d55008973ec9a2b992bd9a65d2352d
+        url: https://files.pythonhosted.org/packages/55/b9/ae8d34899ff0c012039b5a7cb96a389b2476e917733294e498586b45472d/orjson-3.11.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+        sha256: 38aa9e65c591febb1b0aed8da4d469eba239d434c218562df179885c94e1a3ad
 # Gramps
   - name: Gramps
     buildsystem: simple
