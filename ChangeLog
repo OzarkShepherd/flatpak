@@ -2,6 +2,7 @@ Gramps flatpak 6.0.5--2
   - update Gnome Platform to 49
   - change ghostpdl 10.05 to ghostscript 10.06
   - add openai-python dependency
+  - update orjson dependency
 
 Gramps flatpak 6.0.5--1
   - update Gramps source to 6.0.5
