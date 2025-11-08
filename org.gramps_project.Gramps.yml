@@ -45,6 +45,17 @@ cleanup:
   - /share/man
 
 modules:
+# to add more features for WebSearch addon
+# openai-python to add option of using openai in WebSearch, most recent version as of 2025.11 is from 2025.11
+  - name: openai-python
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation .
+    sources:
+      - type: archive
+        url:  https://github.com/openai/openai-python/archive/refs/tags/v2.7.1.tar.gz
+        sha256:  c3bef7d5e48dbfbe8443511daf87102013c44618472c8416e46991916baa7d49
+
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
