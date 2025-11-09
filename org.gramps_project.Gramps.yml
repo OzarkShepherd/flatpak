@@ -54,15 +54,16 @@ cleanup:
 modules:
 # to add more features for WebSearch addon
 # openai-python to add option of using openai in WebSearch, most recent version as of 2025.11 is from 2025.11
-  - name: openai-python
-    buildsystem: simple
-    build-commands:
-      - pip3 install --no-deps openai*.whl
-    sources:
-      - type: file
-        url:  https://files.pythonhosted.org/packages/8c/74/6bfc3adc81f6c2cea4439f2a734c40e3a420703bbcdc539890096a732bbd/openai-2.7.1-py3-none-any.whl
-        sha256:   2f2530354d94c59c614645a4662b9dab0a5b881c5cd767a8587398feac0c9021 
-
+#  - name: openai-python
+#    buildsystem: simple
+#    build-commands:
+#      - pip3 install --no-deps openai*.whl
+#    sources:
+#      - type: file
+#        url:  https://files.pythonhosted.org/packages/8c/74/6bfc3adc81f6c2cea4439f2a734c40e3a420703bbcdc539890096a732bbd/openai-2.7.1-py3-none-any.whl
+#        sha256:   2f2530354d94c59c614645a4662b9dab0a5b881c5cd767a8587398feac0c9021
+# manifest below is for image and exiv metadata
+  - ImageDeps.yml
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
@@ -93,30 +94,6 @@ modules:
       - type: archive
         url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
         sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
-# following dependencies are for images and metadata related Gramps addons
-    # exiv2 most recent version as of 2025.03 was from 2025.02
-  - name: exiv2
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DEXIV2_ENABLE_BMFF=ON
-      - -DEXIV2_ENABLE_INIH=OFF
-    builddir: true
-    sources:
-      - type: archive
-        url:  https://github.com/Exiv2/exiv2/archive/refs/tags/v0.28.5.tar.gz
-        sha256: e1671f744e379a87ba0c984617406fdf8c0ad0c594e5122f525b2fb7c28d394d
-    # gexiv2 most recent version as of 2025.03 was from 2024.06
-    # gramps apparently needs introspection to use gexiv2
-  - name: gexiv2Dependency
-    buildsystem: meson
-    build-options:
-      env:
-        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0
-        - -PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR=/app/lib/girepository-1.0
-    sources:
-      - type: archive
-        url:  https://gitlab.gnome.org/GNOME/gexiv2/-/archive/gexiv2-0.14.3/gexiv2-gexiv2-0.14.3.tar.gz
-        sha256:  5a7ea82effa9c812ac1518a1b4a22a15035d721b0b30cd4b8303228fd5b38e3c
 # Map related dependencies
    # osmgpsmap dependency 1.2 as of 2023-06 requires libsoup 2.4. 
    # Libsoup 2 is not in Gnome 44 runtime as of 2023-06, so libsoup needs a manual install until
