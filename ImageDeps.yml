@@ -1,4 +1,8 @@
 # following dependencies are for images and metadata related Gramps addons
+name: ImageDeps
+buildsystem: simple
+build-commands: []
+modules:
     # exiv2 most recent version as of 2025.03 was from 2025.02
   - name: exiv2
     buildsystem: cmake-ninja
