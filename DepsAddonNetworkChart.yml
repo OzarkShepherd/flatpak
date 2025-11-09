@@ -2,6 +2,7 @@
 name: DepsAddonNetworkChart
 buildsystem: simple
 build-commands: []
+modules:
 # networkx most recent stable version as of 2025.03 was from 2024.10
   - name: networkxDependency
     buildsystem: simple
