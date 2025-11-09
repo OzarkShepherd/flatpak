@@ -1,0 +1,14 @@
+# This manifest is to include dependencies for the Addon WebSearch to work
+name: DepsAddonWebSearch
+buildsystem: simple
+build-commands: []
+modules:
+# openai-python to add option of using openai in WebSearch, most recent version as of 2025.11 is from 2025.11
+  - name: openai-python
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps openai*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/8c/74/6bfc3adc81f6c2cea4439f2a734c40e3a420703bbcdc539890096a732bbd/openai-2.7.1-py3-none-any.whl
+        sha256:   2f2530354d94c59c614645a4662b9dab0a5b881c5cd767a8587398feac0c9021
