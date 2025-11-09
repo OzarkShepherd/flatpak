@@ -55,13 +55,6 @@ modules:
   - DepsImages.yml
 # manifest below is for Map related dependencies
   - DepsMaps.yml
-# Gspell most recent version as of 2025.03 was from 2024.09
-  - name: gspell
-    buildsystem: meson
-    sources: 
-      - type: archive
-        url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
-        sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
 # for network chart addon
   - DepsAddonNetworkChart.yml
 # Gramps
