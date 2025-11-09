@@ -2,7 +2,6 @@
 name: DepsCore
 buildsystem: simple
 build-commands: []
-
 modules:
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
@@ -73,3 +72,10 @@ modules:
         only-arches: [aarch64]
         url: https://files.pythonhosted.org/packages/55/b9/ae8d34899ff0c012039b5a7cb96a389b2476e917733294e498586b45472d/orjson-3.11.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
         sha256: 38aa9e65c591febb1b0aed8da4d469eba239d434c218562df179885c94e1a3ad
+# Gspell most recent version as of 2025.03 was from 2024.09
+  - name: gspell
+    buildsystem: meson
+    sources: 
+      - type: archive
+        url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
+        sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
