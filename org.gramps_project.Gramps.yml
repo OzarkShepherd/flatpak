@@ -57,6 +57,8 @@ modules:
   - DepsMaps.yml
 # for network chart addon
   - DepsAddonNetworkChart.yml
+# for WebSearch addon
+  - DepsAddonWebSearch.yml
 # Gramps
   - name: Gramps
     buildsystem: simple
