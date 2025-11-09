@@ -3,7 +3,49 @@ name: DepsAddonWebSearch
 buildsystem: simple
 build-commands: []
 modules:
-# requests dependency of Websearch, most recent version as of 2025.11 is from 2025.08
+### requests dependency of Websearch
+# urllib3 dep of requests, most recent version as of 2025.11 is from 2025.06
+  - name: urllib3
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps urllib3*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/a7/c2/fe1e52489ae3122415c51f387e221dd0773709bad6c6cdaa599e8a2c5185/urllib3-2.5.0-py3-none-any.whl
+        sha256:  e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc
+# certifi dep of requests, most recent version as of 2025.11 is from 2025.10
+  - name: certifi
+    buildsystem: simple
+    build-commands:
+      - pip3 install certifi*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/e4/37/af0d2ef3967ac0d6113837b44a4f0bfe1328c2b9763bd5b1744520e5cfed/certifi-2025.10.5-py3-none-any.whl
+        sha256:   0f212c2744a9bb6de0c56639a6f68afe01ecd92d91f14ae897c4fe7bbeeef0de
+# charset-normalizer dep of requests, most recent version as of 2025.11 is from 2025.10
+  - name: charset-normalizer
+    buildsystem: simple
+    build-commands:
+      - pip3 install charset-normalizer*.whl
+    sources:
+      - type: file
+        only-arches: [x86_64]
+        url:  https://files.pythonhosted.org/packages/f5/83/6ab5883f57c9c801ce5e5677242328aa45592be8a00644310a008d04f922/charset_normalizer-3.4.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl
+        sha256:  a8a8b89589086a25749f471e6a900d3f662d1d3b6e2e59dcecf787b1cc3a1894
+      - type: file
+        only-arches: [aarch64]
+        url:  https://files.pythonhosted.org/packages/d7/57/71be810965493d3510a6ca79b90c19e48696fb1ff964da319334b12677f0/charset_normalizer-3.4.4-cp313-cp313-musllinux_1_2_aarch64.whl
+        sha256:  f8bf04158c6b607d747e93949aa60618b61312fe647a6369f88ce2ff16043490
+# idna dep of requests, most recent version as of 2025.11 is from 2025.10
+  - name: idna
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps idna*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl
+        sha256:  771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea
+# requests most recent version as of 2025.11 is from 2025.08
   - name: requests
     buildsystem: simple
     build-commands:
@@ -12,7 +54,7 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
         sha256:  2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6
-# qrcode dependency of Websearch, most recent version as of 2025.11 is from 2025.05
+### qrcode dependency of Websearch, most recent version as of 2025.11 is from 2025.05
   - name: qrcode
     buildsystem: simple
     build-commands:
@@ -21,7 +63,7 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/dd/b8/d2d6d731733f51684bbf76bf34dab3b70a9148e8f2cef2bb544fccec681a/qrcode-8.2-py3-none-any.whl
         sha256:  16e64e0716c14960108e85d853062c9e8bba5ca8252c0b4d0231b9df4060ff4f
-# openai portion of Websearch
+### openai portion of Websearch
 # httpx dependency for openai-python, most recent version as of 2025.11 is from 2025.07
   - name: httpx
     buildsystem: simple
