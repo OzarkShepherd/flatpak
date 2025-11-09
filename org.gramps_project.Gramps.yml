@@ -32,7 +32,6 @@ finish-args:
   - --env=PYTHONPATH=/app/plugins/site-packages
   - --env=GI_TYPELIB_PATH=/app/lib/girepository-1.0
   - --env=PYOVERRIDES_DIRECTORY=/app/lib/python3.13/site-packages/gi/overrides
-
 build-options:
   env:
     PIP_PREFIX: /app
@@ -40,7 +39,6 @@ build-options:
     PYTHONPATH: /app/plugins/site-packages
     GI_TYPELIB_PATH: /app/lib/girepository-1.0
     PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
-
 cleanup:
   - '*.a'
   - '*.la'
@@ -50,22 +48,13 @@ cleanup:
   - /lib/cmake
   - /share/gir-1.0
   - /share/man
-
 modules:
-# to add more features for WebSearch addon
-# openai-python to add option of using openai in WebSearch, most recent version as of 2025.11 is from 2025.11
-#  - name: openai-python
-#    buildsystem: simple
-#    build-commands:
-#      - pip3 install --no-deps openai*.whl
-#    sources:
-#      - type: file
-#        url:  https://files.pythonhosted.org/packages/8c/74/6bfc3adc81f6c2cea4439f2a734c40e3a420703bbcdc539890096a732bbd/openai-2.7.1-py3-none-any.whl
-#        sha256:   2f2530354d94c59c614645a4662b9dab0a5b881c5cd767a8587398feac0c9021
 # manifest below is for core Gramps dependencies
   - DepsCore.yml
 # manifest below is for image and exiv metadata
   - DepsImages.yml
+# manifest below is for Map related dependencies
+  - DepsMaps.yml
 # Gspell most recent version as of 2025.03 was from 2024.09
   - name: gspell
     buildsystem: meson
@@ -73,31 +62,6 @@ modules:
       - type: archive
         url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
         sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
-# Map related dependencies
-   # osmgpsmap dependency 1.2 as of 2023-06 requires libsoup 2.4. 
-   # Libsoup 2 is not in Gnome 44 runtime as of 2023-06, so libsoup needs a manual install until
-   # osmgpsmap gets updated to use a newer version of libsoup. Latest libsoup 2 is 2.74 from Oct 2022.
-  - name: libsoupDependency
-    buildsystem: meson
-    sources:
-      - type: archive
-        url: https://download.gnome.org/sources/libsoup/2.74/libsoup-2.74.3.tar.xz
-        sha256: e4b77c41cfc4c8c5a035fcdc320c7bc6cfb75ef7c5a034153df1413fa1d92f13
-    # osmgpsmap is abandoned as of 2025.03 so most recent version was from 202102
-  - name: osmgpsmapDependency
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url:  https://github.com/nzjrs/osm-gps-map/releases/download/1.2.0/osm-gps-map-1.2.0.tar.gz
-        sha256:  ddec11449f37b5dffb4bca134d024623897c6140af1f9981a8acc512dbf6a7a5
-    # Gramps does not see geocodeglib in platform, needed for place coordinate addon
-    # appears to not have versioned releases anymore, last git edit as of 2025.03 was from 2024.03
-  - name: geocodeglibDependency
-    buildsystem: meson
-    sources:
-      - type: archive
-        url:  https://gitlab.gnome.org/GNOME/geocode-glib/-/archive/8f1b5a9149156a03f62dfea14780e8fee030506d/geocode-glib-8f1b5a9149156a03f62dfea14780e8fee030506d.tar.gz
-        sha256:  f4ea933937633d6e33607945c9ca45070628e8545be0ea502b59f959932e8b26
 # for network chart addon
     # networkx most recent stable version as of 2025.03 was from 2024.10
   - name: networkxDependency
