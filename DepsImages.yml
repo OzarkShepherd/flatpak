@@ -1,5 +1,5 @@
 # following dependencies are for images and metadata related Gramps addons
-name: ImageDeps
+name: DepsImages
 buildsystem: simple
 build-commands: []
 modules:
