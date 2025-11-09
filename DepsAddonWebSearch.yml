@@ -3,6 +3,15 @@ name: DepsAddonWebSearch
 buildsystem: simple
 build-commands: []
 modules:
+# requests dependency of Websearch, most recent version as of 2025.11 is from 2025.08
+  - name: requests
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps requests*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+        sha256:  2462f94637a34fd532264295e186976db0f5d453d1cdd31473c85a6a161affb6
 # openai portion of Websearch
 # httpx dependency for openai-python, most recent version as of 2025.11 is from 2025.07
   - name: httpx
