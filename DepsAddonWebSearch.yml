@@ -22,11 +22,11 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/e4/37/af0d2ef3967ac0d6113837b44a4f0bfe1328c2b9763bd5b1744520e5cfed/certifi-2025.10.5-py3-none-any.whl
         sha256:   0f212c2744a9bb6de0c56639a6f68afe01ecd92d91f14ae897c4fe7bbeeef0de
-# charset-normalizer dep of requests, most recent version as of 2025.11 is from 2025.10
-  - name: charset-normalizer
+# charset_normalizer dep of requests, most recent version as of 2025.11 is from 2025.10
+  - name: charset_normalizer
     buildsystem: simple
     build-commands:
-      - pip3 install charset-normalizer*.whl
+      - pip3 install charset_normalizer*.whl
     sources:
       - type: file
         only-arches: [x86_64]
