@@ -32,6 +32,6 @@ https://github.com/gramps-project/flatpak
 
 https://github.com/flathub/org.gramps_project.Gramps
 
-Also, the old version of Berkeley Database (BSDDB) that was included with the Gramps 5.0 and 5.1 flatpaks was dropped starting with Gramps 5.2.
+Also, the old version of Berkeley Database (BSDDB3) that was included with the Gramps 5.0 and 5.1 flatpaks was dropped starting with Gramps 5.2. An old archived flatpak with BSDDB3 is available at the gramps-project github https://github.com/gramps-project/flatpak/releases/tag/v5.1.6-1 to facilitate the conversion of old Gramps databases from BSDDB3 to the current SQLite.
 
 Please make regular full backups of your important genealogy files, and include any attached media files for your genealogy in your backups for your convenience.
