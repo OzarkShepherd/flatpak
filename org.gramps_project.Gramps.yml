@@ -40,11 +40,12 @@ build-options:
     GI_TYPELIB_PATH: /app/lib/girepository-1.0
     PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
 add-extensions:
-  org.gramps_project.Gramps.Plugin:
-    directory: plugins
-    add-ld-path: lib
-    merge-dirs: plugins;help
+  org.gramps_project.Gramps.Plugin.WebSearch:
     subdirectories: true
+    directory: plugins
+    version: stable
+    add-ld-path: lib
+    merge-dirs: bin;lib/python3.13/site-packages
     no-autodownload: true
     autodelete: true
 cleanup:
