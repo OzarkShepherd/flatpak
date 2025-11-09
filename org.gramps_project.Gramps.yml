@@ -42,7 +42,7 @@ build-options:
 add-extensions:
   org.gramps_project.Gramps.Plugin.WebSearch:
     subdirectories: true
-    directory: plugins
+    directory: /app/share/plugins
     version: stable
     add-ld-path: lib
     merge-dirs: bin;lib/python3.13/site-packages
