@@ -73,6 +73,15 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/2a/39/e50c7c3a983047577ee07d2a9e53faf5a69493943ec3f6a384bdc792deb2/httpx-0.28.1-py3-none-any.whl
         sha256:   d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad
+# distro dep for openai-python, most recent version as of 2025.11 is from 2023.12
+  - name: distro
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps distro*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/12/b3/231ffd4ab1fc9d679809f356cebee130ac7daa00d6d6f3206dd4fd137e9e/distro-1.9.0-py3-none-any.whl
+        sha256:  7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2
 # pydantic for openai-python, most recent version as of 2025.11 is from 2025.11
   - name: pydantic
     buildsystem: simple
@@ -82,6 +91,33 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/82/2f/e68750da9b04856e2a7ec56fc6f034a5a79775e9b9a81882252789873798/pydantic-2.12.4-py3-none-any.whl
         sha256:  92d3d202a745d46f9be6df459ac5a064fdaa3c1c4cd8adcfa332ccf3c05f871e
+# tqdm for openai-python most recent version as of 2025.11 is from 2024.11
+  - name: tqdm
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps tqdm*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/d0/30/dc54f88dd4a2b5dc8a0279bdd7270e735851848b762aeb1c1184ed1f6b14/tqdm-4.67.1-py3-none-any.whl
+        sha256:  26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2
+# python_dotenv for openai-python most recent version as of 2025.11 is from 2025.10
+  - name: python_dotenv
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps python_dotenv*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/14/1b/a298b06749107c305e1fe0f814c6c74aea7b2f1e10989cb30f544a1b3253/python_dotenv-1.2.1-py3-none-any.whl
+        sha256:  b81ee9561e9ca4004139c6cbba3a238c32b03e4894671e181b671e8cb8425d61
+# websockets for openai-python most recent version as of 2025.11 is from 2025.03
+  - name: websockets
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps websockets*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/ff/b2/83a6ddf56cdcbad4e3d841fcc55d6ba7d19aeb89c50f24dd7e859ec0805f/websockets-15.0.1-cp313-cp313-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256:  0f3c1e2ab208db911594ae5b4f79addeb3501604a165019dd221c0bdcabe4db8
 # openai-python most recent version as of 2025.11 is from 2025.11
   - name: openai-python
     buildsystem: simple
