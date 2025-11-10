@@ -1,3 +1,7 @@
+Gramps flatpak 6.0.6--2
+  - change finish args, device=dri for better performance, secrets access for website passwords, change network from share to socket for better security
+  - add dependencies for WebSearch addon: urllib3, certifi, charset_normalizer, idna, requests, qrcode, httpx, distro, pydantic, tqdm, python-dotenv, websockets, openai
+
 Gramps flatpak 6.0.6--1
   - update Gramps to 6.0.6
   - update Gnome Platform to 49
