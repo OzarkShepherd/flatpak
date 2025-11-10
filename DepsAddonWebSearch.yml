@@ -166,7 +166,7 @@ modules:
         sha256:  2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2
 # flit_core is listed in typing-extension pyproject.toml as a requirement, most recent version as of 2025.11 is from 2025.03
   - name: python3flitdep
-    build-system: simple
+    buildsystem: simple
     build-commands:
       - pip3 install --no-deps flit_core*.whl
     sources:
@@ -176,7 +176,7 @@ modules:
 # typing-extensions dep (listed by pip-gen for openai) most recent version as of 2025.11 is from 2025.08
 # flatpak-pip-generator included this for the gnome 49 sdk, unknown why since it is for older versions of python. perhaps prereq for typing-inspection?
   - name: python3typinextDependency
-    build-system: simple
+    buildsystem: simple
     build-commands:
       - pip3 install --no-deps typing_extensions*.whl
     sources:
@@ -185,7 +185,7 @@ modules:
         sha256:  f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548
 # typing-inspection dep (listed by pip-gen for openai) most recent version as of 2025.11 is from 2025.09
   - name: python3typininspDependency
-    build-system: simple
+    buildsystem: simple
     build-commands:
       - pip3 install --no-deps typing_inspection*.whl
     sources:
