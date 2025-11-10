@@ -68,7 +68,7 @@ modules:
   - name: annotated-types
     buildsystem: simple
     build-commands:
-      -pip3 install --no-deps annotated_types*.yml
+      - pip3 install --no-deps annotated_types*.yml
     sources:
       - type: file
         url:  https://files.pythonhosted.org/packages/78/b6/6307fbef88d9b5ee7421e68d78a9f162e0da4900bc5f5793f6d3d0e34fb8/annotated_types-0.7.0-py3-none-any.whl
