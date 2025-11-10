@@ -2,7 +2,7 @@ app-id: org.gramps_project.Gramps
 # flatpak-builder will not take hyphen in com.gramps-project.Gramps
 runtime: org.gnome.Platform
 runtime-version: '49'
-sdk: org.gnome.Sdk
+sdk: org.gnome.Sdk//49
 command: gramps
 # to force an archive flatpak to use system locale instead of English. Not needed for flathub packages.
 separate-locales: false
