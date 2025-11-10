@@ -9,16 +9,13 @@ separate-locales: false
 finish-args:
   - --filesystem=home
 # for now, flathub rules blocking the data directories prevent users from choosing to go between a flatpak
-# installation and a system installation. This can cause user data loss, even using persist instead of filesystem
-# can cause data loss for users moving from the flatpak to a system install. When flathub changes thier rules, 
-# home access can be removed and the below filesystems permissions can be used
+# installation and a system installation. If this rule changes then home access can be removed and the below filesystems permissions can be used
 #  - --filesystem=xdg-documents:create
 #  - --filesystem=xdg-download
 #  - --filesystem=xdg-pictures
-# for data directories and compatibility with system installs, flathub currently blocks these directories
- # for databases started with 5.1 and earlier
+# for databases started with 5.1 and earlier
 #  - --filesystem=~/.gramps:create
- # for databases started with 5.2 system installations
+# for databases started with 5.2 system installations
 #  - --filesystem=xdg-data:create
 #  - --filesystem=xdg-config:create
 #  - --filesystem=xdg-cache:create
@@ -26,8 +23,11 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
-#needs network access for maps
-  - --share=network
+  - --device=dri
+# needs network access for maps
+  - --socket=network
+# saves passwords
+  - --talk-name=org.freedesktop.secrets
 # set the environment for app when run
   - --env=PYTHONPATH=/app/plugins/site-packages
   - --env=GI_TYPELIB_PATH=/app/lib/girepository-1.0
