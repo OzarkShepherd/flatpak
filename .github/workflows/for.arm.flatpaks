@@ -1,0 +1,39 @@
+name: CreateFlatpak-arm64
+
+on:
+  pull_request:
+    paths:
+      - 'org.gramps_project.Gramps.yml'
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+    - uses: actions/checkout@main
+    - name: InstallFlatpak
+      run: |
+        sudo add-apt-repository ppa:flatpak/stable
+        sudo apt update
+        sudo apt install flatpak flatpak-builder python3-pip
+
+    - name: SetupFlatpak
+      run: |
+        flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak install flathub org.gnome.Platform//49 org.gnome.Sdk//49 -y
+
+    - name: BuildFlatpak
+      run: |
+        flatpak-builder --repo=repo --force-clean build-dir org.gramps_project.Gramps.yml
+
+    - name: BuildBundle
+      run: |
+        flatpak build-bundle repo grampsARM.flatpak org.gramps_project.Gramps
+
+    - name: UploadBundle
+      uses: actions/upload-artifact@main
+      with:
+        name: grampsARM.flatpak
+        path: grampsARM.flatpak
