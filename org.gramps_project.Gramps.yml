@@ -25,7 +25,8 @@ finish-args:
   - --share=ipc
   - --device=dri
 # needs network access for maps
-  - --socket=network
+# switch to socket=network when Github has Ubuntu 26.04 runner available
+  - --share=network
 # saves passwords
   - --talk-name=org.freedesktop.secrets
 # set the environment for app when run
