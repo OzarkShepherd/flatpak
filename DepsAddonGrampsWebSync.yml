@@ -50,6 +50,8 @@ modules:
     buildsystem: meson
     config-opts:
       - -Dvapi=false
+      - -Dbuild-docs=false
+      - -Dinstall-docs=false
     sources:
       - type: archive
         url: https://gitlab.gnome.org/GNOME/libsecret/-/archive/0.21.7/libsecret-0.21.7.tar.gz
