@@ -19,6 +19,8 @@ finish-args:
 #  - --filesystem=xdg-data:create
 #  - --filesystem=xdg-config:create
 #  - --filesystem=xdg-cache:create
+# Gramps loops an error in terminal with the flatpak run command about not having a writable cache for fontconfig
+   - --persist=~/.cache/fontconfig
 # for gui
   - --socket=wayland
   - --socket=fallback-x11
