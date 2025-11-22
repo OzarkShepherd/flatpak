@@ -22,6 +22,8 @@ finish-args:
 # Gramps loops an error in terminal with the flatpak run command about not having a writable cache for fontconfig
   - --persist=~/.cache/fontconfig:create
   - --env=HOME=$HOME
+  - --filesystem=~/.cache:create
+  - --env=XDG_CACHE_HOME=~/.cache
 # for gui
   - --socket=wayland
   - --socket=fallback-x11
@@ -45,6 +47,7 @@ build-options:
     PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
 # to resolve fontconfig error about unwritable directories, and lack of HOME environment while flatpak runs    
     HOME: '$HOME'
+    XDG_CACHE_HOME: ~/.cache
 cleanup:
   - '*.a'
   - '*.la'
