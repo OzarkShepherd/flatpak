@@ -1,4 +1,4 @@
-name: CreateFlatpak-amd64
+name: CreateFlatpak-arm64
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
 jobs:
   flatpak:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
 
     steps:
     - uses: actions/checkout@main
@@ -30,10 +30,10 @@ jobs:
 
     - name: BuildBundle
       run: |
-        flatpak build-bundle repo gramps.flatpak org.gramps_project.Gramps
+        flatpak build-bundle repo grampsARM.flatpak org.gramps_project.Gramps
 
     - name: UploadBundle
       uses: actions/upload-artifact@main
       with:
-        name: gramps.flatpak
-        path: gramps.flatpak
+        name: grampsARM.flatpak
+        path: grampsARM.flatpak
