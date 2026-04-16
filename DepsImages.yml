@@ -30,7 +30,7 @@ modules:
   - name: python-imagesize
     buildsystem: simple
     build-commands:
-      - pip3 install --no-build-isolation .
+      - pip3 install --no-deps imagesize-*.whl
     sources:
       - type: file
         url:  https://files.pythonhosted.org/packages/5f/53/fb7122b71361a0d121b669dcf3d31244ef75badbbb724af388948de543e2/imagesize-2.0.0-py2.py3-none-any.whl
