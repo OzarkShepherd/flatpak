@@ -27,7 +27,7 @@ Dependencies added to the flatpak
 - goocanvas
 - networkx
 - python-imagesize
-- GNU RCS
+- GNU RCS with its Ed dependency
 - TTF-Freefonts
 
 To request another prerequisite be added to support another Gramps add-on, you can request it at the gramps project flatpak github.
