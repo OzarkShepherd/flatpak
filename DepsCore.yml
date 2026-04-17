@@ -17,9 +17,9 @@ modules:
         sha256:  247af4ab5be736df63d9572665ea341251e8afaf924f384ddcb18c3549113ed3
 # python-fontconfig optional for symbols and reports, most recent version as of 2026.04 is from 2025.09
   - name: python-fontconfig
-      buildsystem: simple
-      build-commands:
-        - pip3 install --no-build-isolation .
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-build-isolation .
     sources:
       - type: archive
         url:  https://files.pythonhosted.org/packages/20/59/99db03443f584b6d14bb635ef9f849dae7966792471dee9bf50ae2308f07/python_fontconfig-0.6.2.post1.tar.gz
