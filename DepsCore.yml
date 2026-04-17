@@ -100,3 +100,12 @@ modules:
       - type: archive
         url: https://gitlab.gnome.org/GNOME/gspell/-/archive/1.14.0/gspell-1.14.0.tar.gz
         sha256: 6ff11258569227c4ef0eaed0524e0c9f84308d34f89fbc49e5d961cdd832ac6a
+# pycountry for internationalization, most recent version as of 2026.04 is from 2026.02
+  - name: pycountry
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps pycountry-*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/9c/42/7703bd45b62fecd44cd7d3495423097e2f7d28bc2e99e7c1af68892ab157/pycountry-26.2.16-py3-none-any.whl
+        sha256:  115c4baf7cceaa30f59a4694d79483c9167dbce7a9de4d3d571c5f3ea77c305a
