@@ -6,7 +6,7 @@ build-commands: []
 modules:
 # GNU RCS, for archiving versions of trees, most recent version with tar.xz as of 2026.04 is from 2020.10--later version used tar.lz which failed to compile in flatpak
   - name: RCS
-    buildsystem: automake
+    buildsystem: autotools
     sources:
       - type: archive
         url:  https://ftp.gnu.org/gnu/rcs/rcs-5.10.0.tar.xz
