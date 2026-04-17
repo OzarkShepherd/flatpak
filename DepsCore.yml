@@ -4,22 +4,6 @@ name: DepsCore
 buildsystem: simple
 build-commands: []
 modules:
-# GNU RCS, for archiving versions of trees
-# GNU RCS requires legacy "ed" editor to configure, remove both RCS and ed modules if RCS gets dropped
-# ed most recent version with tar.gz instead of tar.lz is from 2009.07
-  - name: ed-DepForRCS
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url:  https://ftp.gnu.org/gnu/ed/ed-1.4.tar.gz
-        sha256:  db36da85ee1a9d8bafb4b041bd4c8c11becba0c43ec446353b67045de1634fda
-# GNU RCS have to use older version for compiling and compatability issues (lz, some coding changes)
-  - name: RCS
-    buildsystem: autotools
-    sources:
-      - type: archive
-        url:  https://ftp.gnu.org/gnu/rcs/rcs-5.8.2.tar.gz
-        sha256:  ea00bd5e0d0317d3388dd78c9b3a9381d7d1cce59d686aec60f41eb633c693dc
 # ttf-freefonts recommended at Gramps 6.0.8 README
   - name: ttf-freefonts
     buildsystem: simple
