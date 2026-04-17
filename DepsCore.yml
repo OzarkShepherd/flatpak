@@ -7,7 +7,7 @@ modules:
 # GNU RCS, for archiving versions of trees
 # GNU RCS requires legacy "ed" editor to configure, remove both RCS and ed modules if RCS gets dropped
 # ed most recent version with tar.gz instead of tar.lz is from 2009.07
-- name: ed
+- name: ed-DepForRCS
   buildsystem: autotools
   sources:
     - type: archive
