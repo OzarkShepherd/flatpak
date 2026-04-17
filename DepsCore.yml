@@ -12,10 +12,9 @@ modules:
       - install -m 644 *.ttf /app/share/fonts/truetype/freefont/
       - install -m 644 README /app/share/doc/gnu-freefont/ || true
     sources:
-      - type: git
-        url:  https://github.com/pld-linux/fonts-TTF-freefont.git
-        tag:  auto/th/fonts-TTF-freefont-20120503-4
-        strip-components: 1
+      - type: archive
+        url:  https://ftp.gnu.org/gnu/freefont/freefont-ttf-20051206.tar.gz
+        sha256:  247af4ab5be736df63d9572665ea341251e8afaf924f384ddcb18c3549113ed3
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
