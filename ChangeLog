@@ -2,7 +2,6 @@ Gramps flatpak 6.0.8--1
   - update Gramps to 6.0.8
   - add python-imagesize
   - update Gnome Platform to 50
-  - add GNU RCS with Ed
   - add ttf-freefonts
 
 Gramps flatpak 6.0.7--1
