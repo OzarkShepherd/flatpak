@@ -28,6 +28,7 @@ Dependencies added to the flatpak
 - networkx
 - python-imagesize
 - TTF-Freefonts
+- python-fontconfig
 
 To request another prerequisite be added to support another Gramps add-on, you can request it at the gramps project flatpak github.
 
@@ -37,6 +38,6 @@ https://github.com/flathub/org.gramps_project.Gramps
 
 Also, the old version of Berkeley Database (BSDDB3) that was included with the Gramps 5.0 and 5.1 flatpaks was dropped starting with Gramps 5.2. An old archived flatpak with BSDDB3 is available at the gramps-project github https://github.com/gramps-project/flatpak/releases/tag/v5.1.6-1 to facilitate the conversion of old Gramps databases from BSDDB3 to the current SQLite.
 
-I repeatedly failed to get GNU RCS with Ed to compile into the flatpak. If anyone can get it to compile, you are welcome to submit a PR to https://github.com/gramps-project/flatpak
+In 2021, Gnu RCS 5.10.0 could be compiled into the flatpak. The newer tar.lz archives and some formatting issues now make RCS fail to compile.  If anyone can get it to compile into the Gramps flatpak, you are welcome to submit a PR to https://github.com/gramps-project/flatpak
 
 Please make regular full backups of your important genealogy files, and include any attached media files for your genealogy in your backups for your convenience.
