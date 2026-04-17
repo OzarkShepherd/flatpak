@@ -13,7 +13,7 @@ modules:
       - type: archive
         url:  https://ftp.gnu.org/gnu/ed/ed-1.4.tar.gz
         sha256:  db36da85ee1a9d8bafb4b041bd4c8c11becba0c43ec446353b67045de1634fda
-# GNU RCS most recent version with tar.xz as of 2026.04 is from 2020.10--later version used tar.lz which failed to compile in flatpak
+# GNU RCS have to use older version for compiling and compatability issues (lz, some coding changes)
   - name: RCS
     buildsystem: autotools
     sources:
