@@ -1,5 +1,6 @@
 Gramps flatpak 6.1.0-beta1--1
   - update Gramps to 6.1.0-beta1
+  - add Gramps 6.1 build dependencies pluggy, hatchling, pathspec
   - add python-imagesize
   - update Gnome Platform to 50
   - add ttf-freefonts
