@@ -109,3 +109,13 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/9c/42/7703bd45b62fecd44cd7d3495423097e2f7d28bc2e99e7c1af68892ab157/pycountry-26.2.16-py3-none-any.whl
         sha256:  115c4baf7cceaa30f59a4694d79483c9167dbce7a9de4d3d571c5f3ea77c305a
+# Gramps 6.1 requires hatchling for installation when tag --no-build-deps is used
+# hatchling most recent version as of 2026.04 is from 2026.02
+  - name: hatchling
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps hatchling-*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/d3/8a/44032265776062a89171285ede55a0bdaadc8ac00f27f0512a71a9e3e1c8/hatchling-1.29.0-py3-none-any.whl
+        sha256:   50af9343281f34785fab12da82e445ed987a6efb34fd8c2fc0f6e6630dbcc1b0
