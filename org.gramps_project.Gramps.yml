@@ -49,6 +49,8 @@ cleanup:
   - /share/gir-1.0
   - /share/man
 modules:
+# manifest below is for Gramps 6.1 to build
+  - DepsBuild.yml
 # manifest below is for core Gramps dependencies
   - DepsCore.yml
 # manifest below is for image and exiv metadata
