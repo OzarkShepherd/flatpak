@@ -1,5 +1,5 @@
-Gramps flatpak 6.0.8--1
-  - update Gramps to 6.0.8
+Gramps flatpak 6.1.0-beta1--1
+  - update Gramps to 6.1.0-beta1
   - add python-imagesize
   - update Gnome Platform to 50
   - add ttf-freefonts
