@@ -68,8 +68,8 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl
         sha256: 3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a
-# idna required for Gramps 6.1 module to build
-# idna most recent version as of 2026.04 is from 2026.04
+# requests in required deps for Gramps 6.1 pyproject.toml
+ # idna dep of requests most recent version as of 2026.04 is from 2026.04
   - name: idna
     buildsystem: simple
     build-commands:
@@ -78,7 +78,6 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/53/b2/acc33950394b3becb2b664741a0c0889c7ef9f9ffbfa8d47eddb53a50abd/idna-3.12-py3-none-any.whl
         sha256: 60ffaa1858fac94c9c124728c24fcde8160f3fb4a7f79aa8cdd33a9d1af60a67
-# requests in required deps for Gramps 6.1 pyproject.toml
  # charset normalizer is a required dep for requests
  # charset most recent version as of 2026.04 is from 2026.04
   - name: charset_normalizer
@@ -89,6 +88,15 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl
         sha256: 3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d
+ # urllib3 req dep of requests, most recent version as of 2026.04 is from 2026.01
+  - name: urllib3
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps urllib3-*.whl
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl
+        sha256: bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4
 # requests most recent version as of 2026.04 is from 2026.03
   - name: requests
     buildsystem: simple
