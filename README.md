@@ -30,7 +30,7 @@ Dependencies added to the flatpak
 - TTF-Freefonts
 - python-fontconfig
 - pycountry
-- requests with its charset_normalizer dependency
+- requests with its charset_normalizer, urllib3, and idna dependencies
 - certifi
 
 To request another prerequisite be added to support another Gramps add-on, you can request it at the gramps project flatpak github.
