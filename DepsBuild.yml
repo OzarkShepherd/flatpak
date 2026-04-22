@@ -38,7 +38,7 @@ modules:
   - name: trove_classifiers
     buildsystem: simple
     build-commands:
-      -pip3 install --no-deps trove_classifiers-*.whl
+      - pip3 install --no-deps trove_classifiers-*.whl
     sources:
       - type: file
         url:  https://files.pythonhosted.org/packages/bb/4a/2e5583e544bc437d5e8e54b47db87430df9031b29b48d17f26d129fa60c0/trove_classifiers-2026.1.14.14-py3-none-any.whl
