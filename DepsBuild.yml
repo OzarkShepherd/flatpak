@@ -68,6 +68,16 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl
         sha256: 3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a
+# idna required for Gramps 6.1 module to build
+# idna most recent version as of 2026.04 is from 2026.04
+  - name: idna
+    buildsystem: simple
+    build-commands:
+      - pip3 install --no-deps idna-*.whl
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/53/b2/acc33950394b3becb2b664741a0c0889c7ef9f9ffbfa8d47eddb53a50abd/idna-3.12-py3-none-any.whl
+        sha256: 60ffaa1858fac94c9c124728c24fcde8160f3fb4a7f79aa8cdd33a9d1af60a67
 # requests in required deps for Gramps 6.1 pyproject.toml
  # charset normalizer is a required dep for requests
  # charset most recent version as of 2026.04 is from 2026.04
