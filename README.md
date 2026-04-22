@@ -5,7 +5,7 @@ The flatpak is available on flathub at https://flathub.org/apps/details/org.gram
 The Gramps flatpak contains dependencies and works with flathub runtimes to work independently regardless of the linux distribution.  There are also dependencies for some third party add-ons like Graphview and Network Chart.
 
 # List of Included Dependencies
-Dependencies confirmed in the Gnome flatpak platform (Gnome 50 as of Gramps 6.0.8--1 flatpak):
+Dependencies confirmed in the Gnome flatpak platform (Gnome 50 as of Gramps 6.1.0-beta1--1 flatpak):
 - python3
 - gtk
 - pygobject
