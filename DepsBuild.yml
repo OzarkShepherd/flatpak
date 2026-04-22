@@ -33,3 +33,13 @@ modules:
       - type: file
         url:  https://files.pythonhosted.org/packages/54/20/4d324d65cc6d9205fabedc306948156824eb9f0ee1633355a8f7ec5c66bf/pluggy-1.6.0-py3-none-any.whl
         sha256:   e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746
+# trove_classifiers required for Gramps 6.1 module to build
+# most recent version as of 2026.04 is from 2026.01
+  - name: trove_classifiers
+    buildsystem: simple
+    build-commands:
+      -pip3 install --no-deps trove_classifiers-*.whl
+    sources:
+      - type: file
+        url:  https://files.pythonhosted.org/packages/bb/4a/2e5583e544bc437d5e8e54b47db87430df9031b29b48d17f26d129fa60c0/trove_classifiers-2026.1.14.14-py3-none-any.whl
+        sha256:   1f9553927f18d0513d8e5ff80ab8980b8202ce37ecae0e3274ed2ef11880e74d
