@@ -27,17 +27,11 @@ jobs:
     - name: BuildMainFlatpak
       run: |
         flatpak-builder --repo=repo --force-clean build-dir org.gramps_project.Gramps.yml
+        flatpak build-bundle repo gramps.flatpak org.gramps_project.Gramps
 
     - name: BuildExtension
       run: |
         flatpak-builder --repo=repo --force-clean build-dir-extension org.gramps_project.Gramps.plugin.OpenAI.yml
-
-    - name: BuildMainBundle
-      run: |
-        flatpak build-bundle repo gramps.flatpak org.gramps_project.Gramps
-
-    - name: BuildOpenAIExtensionBundle
-      run: |
         flatpak build-bundle repo gramps-ext-openai.flatpak org.gramps_project.Gramps.plugin.OpenAI
 
     - name: UploadArtifact
@@ -46,7 +40,7 @@ jobs:
         name: gramps.amd64.flatpak
         path: gramps.flatpak
 
-    - name: Upload Extension Artifact
+    - name: UploadExtensionArtifact
       uses: actions/upload-artifact@main
       with:
         name: gramps-openai-extension
