@@ -1,0 +1,14 @@
+id: org.gramps_project.Gramps.plugin.OpenAI
+branch: '6.0.8'
+runtime: org.gramps_project.Gramps
+runtime-version: '6.0.8--*'
+sdk: org.gnome.Sdk//49
+build-extension: true
+separate-locales: false
+build-options:
+  prefix: /app/extension_directory/Gramps
+  prepend-path: /app/extension_directory/Gramps/bin
+  prepend-pkg-config-path: /app/extension_directory/Gramps/lib/pkgconfig
+  prepend-ld-library-path: /app/extension_directory/Gramps/lib
+modules:
+  - DepsExtOpenAI.yml
