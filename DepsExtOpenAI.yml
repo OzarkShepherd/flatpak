@@ -1,4 +1,4 @@
-# This manifest is to include dependencies for the Addon WebSearch to work
+# This manifest is to include dependencies for addons using openai
 name: DepsExtOpenAI
 buildsystem: simple
 build-commands: []
