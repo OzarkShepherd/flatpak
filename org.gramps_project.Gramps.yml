@@ -41,7 +41,7 @@ build-options:
     PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
 add-extensions:
   org.gramps_project.Gramps.plugin.OpenAI
-    directory: extension_directory
+    directory: /app/extension_directory
     add-ld-path: lib
     merge-dirs: plug-ins;help
     subdirectories: true
