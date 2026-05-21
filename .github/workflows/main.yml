@@ -32,8 +32,18 @@ jobs:
       run: |
         flatpak build-bundle repo gramps.flatpak org.gramps_project.Gramps
 
+    - name: Build OpenAI Extension Bundle
+      run: |
+        flatpak build-bundle repo gramps-ext-openai.flatpak org.gramps_project.Gramps.plugin.OpenAI
+
+    - name: Upload Extension Artifact
+      uses: actions/upload-artifact@main
+      with:
+        name: gramps-openai-extension
+        path: gramps-ext-openai.flatpak
+
     - name: UploadBundle
       uses: actions/upload-artifact@main
       with:
-        name: gramps.flatpak
+        name: gramps.amd64.flatpak
         path: gramps.flatpak
