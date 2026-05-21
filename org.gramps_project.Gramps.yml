@@ -43,6 +43,7 @@ add-extensions:
     directory: /app/extension_directory
     add-ld-path: lib
     merge-dirs: plug-ins;help
+    bundle: true
     subdirectories: true
     no-autodownload: true
     autodelete: true
