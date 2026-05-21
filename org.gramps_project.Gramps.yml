@@ -8,14 +8,14 @@ command: gramps
 separate-locales: false
 finish-args:
   - --filesystem=home
-# for now, flathub rules blocking the data directories prevent users from choosing to go between a flatpak
-# installation and a system installation. This can cause user data loss, even using persist instead of filesystem
-# can cause data loss for users moving from the flatpak to a system install. When flathub changes thier rules, 
+# for now, flathub policy blocking the data directories prevent users from choosing to go between a flatpak
+# installation and a system installation. This caused user data loss, even using persist instead of filesystem
+# can cause data loss for users moving from the flatpak to a system install. If the Flathub policy changes, evaluate if 
 # home access can be removed and the below filesystems permissions can be used
 #  - --filesystem=xdg-documents:create
 #  - --filesystem=xdg-download
 #  - --filesystem=xdg-pictures
-# for data directories and compatibility with system installs, flathub currently blocks these directories
+# below is for data directories and compatibility with system installs, flathub blocked these directories when tried
  # for databases started with 5.1 and earlier
 #  - --filesystem=~/.gramps:create
  # for databases started with 5.2 system installations
