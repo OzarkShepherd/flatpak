@@ -24,26 +24,30 @@ jobs:
         flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
         flatpak install flathub org.gnome.Platform//49 org.gnome.Sdk//49 -y
 
-    - name: BuildFlatpak
+    - name: BuildMainFlatpak
       run: |
         flatpak-builder --repo=repo --force-clean build-dir org.gramps_project.Gramps.yml
 
-    - name: BuildBundle
+    - name: BuildExtension
+      run: |
+        flatpak-builder --repo=repo --force-clean build-dir-extension org.gramps_project.Gramps.plugin.OpenAI.yml
+
+    - name: BuildMainBundle
       run: |
         flatpak build-bundle repo gramps.flatpak org.gramps_project.Gramps
 
-    - name: Build OpenAI Extension Bundle
+    - name: BuildOpenAIExtensionBundle
       run: |
         flatpak build-bundle repo gramps-ext-openai.flatpak org.gramps_project.Gramps.plugin.OpenAI
+
+    - name: UploadArtifact
+      uses: actions/upload-artifact@main
+      with:
+        name: gramps.amd64.flatpak
+        path: gramps.flatpak
 
     - name: Upload Extension Artifact
       uses: actions/upload-artifact@main
       with:
         name: gramps-openai-extension
         path: gramps-ext-openai.flatpak
-
-    - name: UploadBundle
-      uses: actions/upload-artifact@main
-      with:
-        name: gramps.amd64.flatpak
-        path: gramps.flatpak
