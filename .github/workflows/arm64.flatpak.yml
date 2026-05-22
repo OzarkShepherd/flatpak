@@ -1,4 +1,4 @@
-name: CreateFlatpak-arm64
+name: arm64.flatpak
 
 on:
   pull_request:
