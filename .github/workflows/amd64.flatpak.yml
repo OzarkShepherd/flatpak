@@ -1,0 +1,49 @@
+name: amd64.flatpak
+
+on:
+  pull_request:
+    paths:
+      - 'org.gramps_project.Gramps.yml'
+  workflow_dispatch:
+
+jobs:
+  flatpak:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@main
+    - name: InstallFlatpak
+      run: |
+        sudo add-apt-repository ppa:flatpak/stable
+        sudo apt update
+        sudo apt install flatpak flatpak-builder python3-pip
+
+    - name: SetupFlatpak
+      run: |
+        flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak install flathub org.gnome.Platform//49 org.gnome.Sdk//49 -y
+
+    - name: BuildMainFlatpak
+      run: |
+        flatpak build-init build-dir org.gramps_project.Gramps org.gnome.Sdk org.gnome.Platform 49
+        flatpak-builder --repo=repo-flatpak --force-clean build-dir org.gramps_project.Gramps.yml
+        flatpak build-bundle repo-flatpak gramps.flatpak org.gramps_project.Gramps
+
+    - name: BuildExtension
+      run: |
+        flatpak build-init build-dir-extensions org.gramps_project.Gramps.plugin.OpenAI org.gnome.Sdk org.gnome.Platform 49
+        flatpak-builder --repo=repo-openai --force-clean build-dir-extension org.gramps_project.Gramps.plugin.OpenAI.yml
+        flatpak build-bundle repo-openai gramps-ext-openai.flatpak org.gramps_project.Gramps.plugin.OpenAI
+
+    - name: UploadArtifact
+      uses: actions/upload-artifact@main
+      with:
+        name: gramps.amd64.flatpak
+        path: gramps.flatpak
+
+    - name: UploadExtensionArtifact
+      uses: actions/upload-artifact@main
+      with:
+        name: gramps-openai-extension
+        path: gramps-ext-openai.flatpak
