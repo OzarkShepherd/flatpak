@@ -7,6 +7,6 @@ build-extension: true
 separate-locales: false
 build-options:
   prefix: /app/extension_directory
-    add-ld-path: lib
+  add-ld-path: lib
 modules:
   - DepsExtOpenAI.yml
