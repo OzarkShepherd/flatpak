@@ -4,8 +4,6 @@ runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
 command: gramps
-# allows optional extensions to be installed
-build-extension: true
 # to force an archive flatpak to use system locale instead of English. Not needed for flathub packages.
 separate-locales: false
 finish-args:
