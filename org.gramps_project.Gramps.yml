@@ -4,6 +4,8 @@ runtime: org.gnome.Platform
 runtime-version: '49'
 sdk: org.gnome.Sdk
 command: gramps
+# allows optional extensions to be installed
+build-extension: true
 # to force an archive flatpak to use system locale instead of English. Not needed for flathub packages.
 separate-locales: false
 finish-args:
@@ -40,6 +42,7 @@ build-options:
     PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
 add-extensions:
   org.gramps_project.Gramps.plugin.OpenAI:
+    version: '6.0.8'
     directory: /app/extension_directory
     add-ld-path: lib
     merge-dirs: plug-ins;help
@@ -47,6 +50,8 @@ add-extensions:
     subdirectories: true
     no-autodownload: true
     autodelete: true
+cleanup-commands:
+  - mkdir -p /app/extension_directory
 cleanup:
   - '*.a'
   - '*.la'
