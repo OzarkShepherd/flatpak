@@ -12,12 +12,12 @@ modules:
     sources:
       - type: file
         only-arches: [x86_64]
-        url: https://files.pythonhosted.org/packages/aa/fd/d0733fcb9086b8be4ebcfcda2d0312865d17d0d9884378b7cffb29d0763f/orjson-3.11.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-        sha256: 1469d254b9884f984026bd9b0fa5bbab477a4bfe558bba6848086f6d43eb5e73
+        url: https://files.pythonhosted.org/packages/25/de/a82acf93bdcca0c79ccff25ef0c6868d24ccbc2e72f21fae39c8cabce4f1/orjson-3.13.0-cp314-cp314-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+        sha256: 58a9619d88f8818d9ab6b39d70d203789457ba13c1ed5d274f33ce9ae7e81a36
       - type: file
         only-arches: [aarch64]
-        url: https://files.pythonhosted.org/packages/55/b9/ae8d34899ff0c012039b5a7cb96a389b2476e917733294e498586b45472d/orjson-3.11.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-        sha256: 38aa9e65c591febb1b0aed8da4d469eba239d434c218562df179885c94e1a3ad
+        url: https://files.pythonhosted.org/packages/04/0f/36fdfb32ad1852997bac00e3ce52c7888d8a1094ba9dcdcbb22fcc6b953a/orjson-3.13.0-cp314-cp314-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
+        sha256: c749ab3ac30b5ab1ffb7677f8b92eacfdfdc5260210baa398f845bc3714c05d8
 # Gramps 6.1 requires hatchling for installation when tag --no-build-deps is used
 # hatchling most recent version as of 2026.04 is from 2026.02
   - name: hatchling
