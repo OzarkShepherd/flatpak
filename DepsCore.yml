@@ -15,15 +15,15 @@ modules:
       - type: archive
         url:  https://ftp.gnu.org/gnu/freefont/freefont-ttf-20051206.tar.gz
         sha256:  247af4ab5be736df63d9572665ea341251e8afaf924f384ddcb18c3549113ed3
-# python-fontconfig optional for symbols and reports, most recent version as of 2026.04 is from 2025.09
+# python-fontconfig optional for symbols and reports, most recent version as of 2026.11 is from 2026.08
   - name: python-fontconfig
     buildsystem: simple
     build-commands:
       - pip3 install --no-build-isolation .
     sources:
       - type: archive
-        url:  https://files.pythonhosted.org/packages/20/59/99db03443f584b6d14bb635ef9f849dae7966792471dee9bf50ae2308f07/python_fontconfig-0.6.2.post1.tar.gz
-        sha256:   4837290305613710cf6c515db8923284da06e4f48a549d2fe8e2d4276aed3e73 
+        url: https://files.pythonhosted.org/packages/ea/f0/f43ac1a9914f47905e3887da02ad91d2f821698e8952fa1aa1f293e08c92/python_fontconfig-0.6.3.tar.gz
+        sha256: af46e4dc089be55050896d133643e2bdc6070fbfe78a039691ff08948af88c38 
 # PILLOW for cropping images, latex support, and addons; most recent version as of 2025.03 is from 2025.01
   - name: PILLOWDependency
     buildsystem: simple
@@ -31,8 +31,8 @@ modules:
       - pip3 install --no-build-isolation .
     sources:
       - type: archive
-        url:  https://files.pythonhosted.org/packages/f3/af/c097e544e7bd278333db77933e535098c259609c4eb3b85381109602fb5b/pillow-11.1.0.tar.gz
-        sha256:  368da70808b36d73b4b390a8ffac11069f8a5c85f29eff1f1b01bcf3ef5b2a20
+        url: https://files.pythonhosted.org/packages/f3/af/c097e544e7bd278333db77933e535098c259609c4eb3b85381109602fb5b/pillow-11.1.0.tar.gz
+        sha256: 368da70808b36d73b4b390a8ffac11069f8a5c85f29eff1f1b01bcf3ef5b2a20
 # Goocanvas is abandoned and the most recent update is from 2021.01.16
   - name: GoocanvasDependency
     buildsystem: autotools
