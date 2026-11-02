@@ -1,7 +1,7 @@
 app-id: org.gramps_project.Gramps
 # flatpak-builder will not take hyphen in com.gramps-project.Gramps
 runtime: org.gnome.Platform
-runtime-version: '50'
+runtime-version: '51'
 sdk: org.gnome.Sdk
 command: gramps
 # to force an archive flatpak to use system locale instead of English. Not needed for flathub packages.
@@ -31,14 +31,14 @@ finish-args:
 # set the environment for app when run
   - --env=PYTHONPATH=/app/plugins/site-packages
   - --env=GI_TYPELIB_PATH=/app/lib/girepository-1.0
-  - --env=PYOVERRIDES_DIRECTORY=/app/lib/python3.13/site-packages/gi/overrides
+  - --env=PYOVERRIDES_DIRECTORY=/app/lib/python3.14/site-packages/gi/overrides
 build-options:
   env:
     PIP_PREFIX: /app
     PIP_DISABLE_PIP_VERSION_CHECK: "1"
     PYTHONPATH: /app/plugins/site-packages
     GI_TYPELIB_PATH: /app/lib/girepository-1.0
-    PYOVERRIDES_DIRECTORY: /app/lib/python3.13/site-packages/gi/overrides
+    PYOVERRIDES_DIRECTORY: /app/lib/python3.14/site-packages/gi/overrides
 cleanup:
   - '*.a'
   - '*.la'
@@ -67,4 +67,4 @@ modules:
     sources:
       - type: git
         url: https://github.com/gramps-project/gramps.git
-        tag: v6.1.0-beta1
+        commit: v6.1.0-beta1
