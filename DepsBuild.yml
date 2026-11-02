@@ -4,7 +4,7 @@ buildsystem: simple
 build-commands: []
 modules:
 # orjson in required deps for Gramps6.1 pyproject
-# most recent version as of 2025.11 is from 2025.10
+# most recent version as of 2026.11 is from 2026.10
   - name: orjsonDependency
     buildsystem: simple
     build-commands:
